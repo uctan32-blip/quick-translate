@@ -2,11 +2,6 @@ name: Quick Translate Book
 
 on:
   workflow_dispatch:
-    inputs:
-      book_folder:
-        description: 'Thu muc truyen'
-        required: true
-        default: 'samples'
 
 jobs:
   translate:
@@ -25,4 +20,4 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python scripts/translate.py --book "${{ github.event.inputs.book_folder }}"
+          python main.py
